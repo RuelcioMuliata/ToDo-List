@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body> 
+    <div class="mainContainer">
+        <main class="todo">
+            <div class="toDoTitle">
+                <h1>TODO LIST</h1>
+            </div>
+                <div class="toDoSearch">
+                    <div class="toDoList">
+                        <label class="toDoSearch">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input placeholder="Search note.." type="text" name="" id="">
+                            <button id="button">+</button>
+                    </div>
+                        </label> 
+                </div>
+            </div>
+                <div class="taskContainer">
+                    <div class="toDoList taskList" id="toDoList2"> 
+                </div>
+            </div>   
+        </main>
+    
+        <div class="modalContainer">
+            <div class="modal">
+                <h1>NEW NOTE</h1>
+                    <input placeholder="New Note.." type="text" name="noteInput" id="secondInput">
+                        <div class="buttons">
+                            <button class="apply">APPLY</button>
+                            <button class="cancel">CANCEL</button>
+                        </div>
+            </div>
+        </div>
+    
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

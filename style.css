@@ -1,0 +1,315 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #252525;
+    color: #ffff;
+}
+
+main {
+    display: flex;
+    width: 70vw;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 15px; 
+}
+
+.toDoTitle {
+    padding: 30px;
+    padding-top: 50px;
+}
+
+.toDoTitle h1 {
+    font-size: 26px;
+    color: #f7f7f7;
+}
+
+main input[type="text"] {
+    width: 651px;
+    height: 40px;
+    padding-left: 45px;
+    padding-right: 45px;
+    background-color: #252525;
+    outline: none;
+    border: 1px solid #f7f7f7;
+    border-radius: 5px;
+    color:#ffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+main input[type="text"]::placeholder {
+    color: #797979;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fa-magnifying-glass {
+    position: relative;
+    padding-right: 20px;
+    font-size: 20px;
+    left: 55px;
+    top: 2px;
+}
+
+main button {
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: 4px;
+    margin-left: 10px;
+}
+
+main button:hover {
+    background-color: #524cc5;
+}
+
+.toDoList {
+    display: flex;
+}
+
+.toDoItem {
+    display: flex;
+    width: 600px;
+    height: 60px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+    margin-top: 20px;
+    border-bottom: 1px solid #6c63ff;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    font: inherit;
+    border: 1px solid #6c63ff;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #252525;
+    font-weight: 900;
+    text-align: left;
+}
+
+.toDoItem {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.toDoItem:hover  {
+    color: #ffff;
+    transition: all .5s ease;
+    cursor: pointer;
+    text-align: left;
+}
+
+input[type="checkbox"]:after {
+    font-family: "Font Awesome 6 Free";
+    content: "\f00c";
+    font-weight: 900;
+    font-size: 25px;
+    color: #ffff;
+    display: none;
+}
+
+input[type="checkbox"] {
+    margin-left: 10px;
+    margin-right: 10px;
+    accent-color: green;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #6c63ff;
+}
+
+input[type="checkbox"]:checked::after {
+    display: block;
+}
+
+input[type='checkbox']:checked + div {
+    text-decoration:line-through;
+}
+
+input[type="button"] {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #6c63ff;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    margin-right: 10px;
+    background-color: #252525;
+    color: #ffff;
+}
+
+.addButton {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+#button {
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: 1px;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+}
+
+#button:hover {
+    background-color: #6c63ff;
+}
+
+.listContent {
+    text-align: left;
+    color: #fff;
+}
+
+.modalContainer {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modalContainer.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modal {
+    background-color: #252525;
+    width: 500px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 1px solid #f7f7f7;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.modal h1 {
+    margin: 0;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.modal p {
+    opacity: 0.7;
+    font-size: 14px;
+    padding: 10px;
+    color: black;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.buttons .apply {
+    font-weight: bold;
+    background-color: #6c63ff;
+    color: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    top: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+    height: 40px;
+    width: 80px;
+}
+
+.buttons .cancel {
+    font-weight: bold;
+    background-color: #252525;
+    color: #524cc5;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    top: 4px;
+    margin-left: 10px;
+    border: 1px solid #524cc5;
+    cursor: pointer;
+    height: 40px;
+    width: 80px;
+}
+
+.modalContainer input[type="text"] {
+    width: 411px;
+    height: 40px;
+    padding-left: 5px;
+    padding-right: 45px;
+    background-color: #252525;
+    border: 1px solid #f7f7f7;
+    border-radius: 5px;
+    color:#ffff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 80px;
+    margin-top: 10px;
+}
+
+.modalContainer input[type="text"]::placeholder {
+    color: #797979;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.taskContainer {
+    display: block;
+}
+
+#toDoList2 {
+    display: block;
+}
+
+.taskList {
+    margin: 0 auto;
+}
